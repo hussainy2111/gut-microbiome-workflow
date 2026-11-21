@@ -1,0 +1,675 @@
+Linux version
+
+Using ReadLine,Boost,HDF5,GSL
+mothur v.1.48.5
+Last updated: 1/13/26
+by
+Patrick D. Schloss
+
+Department of Microbiology & Immunology
+
+University of Michigan
+http://www.mothur.org
+
+When using, please cite:
+Schloss, P.D., et al., Introducing mothur: Open-source, platform-independent, community-supported software for describing and comparing microbial communities. Appl Environ Microbiol, 2009. 75(23):7537-41.
+
+Distributed under the GNU General Public License
+
+Type 'help()' for information on the commands that are available
+
+For questions and analysis support, please visit our forum at https://forum.mothur.org
+
+Type 'quit()' to exit program
+
+[NOTE]: Setting random seed to 19760620.
+
+Batch Mode
+
+
+mothur > set.logfile(name=run.logfile)
+
+Setting logfile name to run.logfile
+
+
+mothur > make.file(inputdir=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads,type=fastq,prefix=stability)
+Setting input directories to: 
+	/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/
+
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.files
+
+
+mothur > make.contigs(file=current,processors=2)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.files as input file for the file parameter.
+
+Using 2 processors.
+
+>>>>>	Processing file pair F3D0_R1.fastq - F3D0_R2.fastq (files 1 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 4 secs to assemble 7793 reads.
+
+
+>>>>>	Processing file pair F3D141_R1.fastq - F3D141_R2.fastq (files 2 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 3 secs to assemble 5958 reads.
+
+
+>>>>>	Processing file pair F3D142_R1.fastq - F3D142_R2.fastq (files 3 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 1 secs to assemble 3183 reads.
+
+
+>>>>>	Processing file pair F3D143_R1.fastq - F3D143_R2.fastq (files 4 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 2 secs to assemble 3178 reads.
+
+
+>>>>>	Processing file pair F3D144_R1.fastq - F3D144_R2.fastq (files 5 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 3 secs to assemble 4827 reads.
+
+
+>>>>>	Processing file pair F3D145_R1.fastq - F3D145_R2.fastq (files 6 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 4 secs to assemble 7377 reads.
+
+
+>>>>>	Processing file pair F3D1_R1.fastq - F3D1_R2.fastq (files 7 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 2 secs to assemble 5869 reads.
+
+
+>>>>>	Processing file pair F3D2_R1.fastq - F3D2_R2.fastq (files 8 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 9 secs to assemble 19620 reads.
+
+
+>>>>>	Processing file pair F3D3_R1.fastq - F3D3_R2.fastq (files 9 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 3 secs to assemble 6758 reads.
+
+
+>>>>>	Processing file pair F3D5_R1.fastq - F3D5_R2.fastq (files 10 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 2 secs to assemble 4448 reads.
+
+
+>>>>>	Processing file pair Mock_R1.fastq - Mock_R2.fastq (files 11 of 11)	<<<<<
+Making contigs...
+Done.
+
+It took 3 secs to assemble 4779 reads.
+
+
+Group count: 
+F3D0	7793
+F3D1	5869
+F3D141	5958
+F3D142	3183
+F3D143	3178
+F3D144	4827
+F3D145	7377
+F3D2	19620
+F3D3	6758
+F3D5	4448
+Mock	4779
+
+Total of all groups is 73790
+
+It took 37 secs to process 73790 sequences.
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.scrap.contigs.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs_report
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.count_table
+
+
+mothur > screen.seqs(fasta=current,count=current,maxambig=0,maxlength=275,maxhomop=8)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+
+It took 0 secs to screen 73790 sequences, removed 11460.
+
+/******************************************/
+Running command: remove.seqs(accnos=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.bad.accnos.temp, count=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.count_table)
+Unable to open /workspaces/gut. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut. Trying mothur's executable directory gut.
+Unable to open gut.
+Unable to open gut, skipping.
+Unable to open microbiome. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome. Trying mothur's executable directory microbiome.
+Unable to open microbiome.
+Unable to open microbiome, skipping.
+Unable to open workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.count_table. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.count_table.
+Removed 11460 sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.count_table.
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.pick.count_table
+
+/******************************************/
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.bad.accnos
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.good.count_table
+
+
+It took 2 secs to screen 73790 sequences.
+
+mothur > unique.seqs(fasta=current,count=current)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs.good.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.fasta as input file for the fasta parameter.
+62330	8971
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.count_table
+
+
+mothur > summary.seqs(fasta=current,count=current)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	250	250	0	3	1
+2.5%-tile:	1	252	252	0	3	1559
+25%-tile:	1	252	252	0	4	15583
+Median: 	1	252	252	0	4	31166
+75%-tile:	1	253	253	0	5	46748
+97.5%-tile:	1	253	253	0	6	60772
+Maximum:	1	259	259	0	8	62330
+Mean:	1	252	252	0	4
+# of unique seqs:	8971
+total # of seqs:	62330
+
+It took 0 secs to summarize 62330 sequences.
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.summary
+
+
+mothur > align.seqs(fasta=current,reference=/workspaces/gut-microbiome-workflow/data/reference/silva.v4.fasta)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+
+Reading in the /workspaces/gut-microbiome-workflow/data/reference/silva.v4.fasta template sequences...	DONE.
+It took 4 to read  14956 sequences.
+
+Aligning sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.fasta ...
+It took 11 secs to align 8971 sequences.
+
+
+It took 11 seconds to align 8971 sequences.
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.align
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.align_report
+
+
+mothur > screen.seqs(fasta=current,count=current,start=1968,end=11550)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.align as input file for the fasta parameter.
+
+Using 2 processors.
+
+It took 2 secs to screen 8971 sequences, removed 60.
+
+/******************************************/
+Running command: remove.seqs(accnos=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.bad.accnos.temp, count=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.count_table)
+Unable to open /workspaces/gut. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut. Trying mothur's executable directory gut.
+Unable to open gut.
+Unable to open gut, skipping.
+Unable to open microbiome. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome. Trying mothur's executable directory microbiome.
+Unable to open microbiome.
+Unable to open microbiome, skipping.
+Unable to open workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.count_table. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.count_table.
+Removed 93 sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.count_table.
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.pick.count_table
+
+/******************************************/
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.align
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.bad.accnos
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.good.count_table
+
+
+It took 2 secs to screen 8971 sequences.
+
+mothur > filter.seqs(fasta=current,vertical=T,trump=.)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.align as input file for the fasta parameter.
+
+Using 2 processors.
+Creating Filter...
+It took 2 secs to create filter for 8911 sequences.
+
+
+Running Filter...
+It took 1 secs to filter 8911 sequences.
+
+
+
+Length of filtered alignment: 361
+Number of columns removed: 13064
+Length of the original alignment: 13425
+Number of sequences used to construct filter: 8911
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.filter
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.fasta
+
+
+mothur > unique.seqs(fasta=current,count=current)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.good.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.fasta as input file for the fasta parameter.
+8911	8909
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.count_table
+
+
+mothur > pre.cluster(fasta=current,count=current,diffs=2)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+
+/******************************************/
+Splitting by sample: 
+
+Using 2 processors.
+
+Selecting sequences for groups F3D0-F3D1-F3D141-F3D142-F3D143
+
+
+Selecting sequences for groups F3D144-F3D145-F3D2-F3D3-F3D5-Mock
+
+Selected 1523 sequences from F3D0.
+Selected 1195 sequences from F3D1.
+Selected 1115 sequences from F3D141.
+Selected 723 sequences from F3D142.
+Selected 734 sequences from F3D143.
+Selected 951 sequences from F3D144.
+Selected 1350 sequences from F3D145.
+Selected 2747 sequences from F3D2.
+Selected 1078 sequences from F3D3.
+Selected 907 sequences from F3D5.
+Selected 531 sequences from Mock.
+
+It took 1 seconds to split the dataset by sample.
+/******************************************/
+
+Processing group F3D144:
+
+Processing group F3D0:
+F3D144	951	452	499
+Total number of sequences before pre.cluster was 951.
+pre.cluster removed 499 sequences.
+
+It took 0 secs to cluster 951 sequences.
+
+Processing group F3D145:
+F3D0	1523	617	906
+Total number of sequences before pre.cluster was 1523.
+pre.cluster removed 906 sequences.
+
+It took 0 secs to cluster 1523 sequences.
+
+Processing group F3D1:
+F3D145	1350	567	783
+Total number of sequences before pre.cluster was 1350.
+pre.cluster removed 783 sequences.
+
+It took 0 secs to cluster 1350 sequences.
+
+Processing group F3D2:
+F3D1	1195	509	686
+Total number of sequences before pre.cluster was 1195.
+pre.cluster removed 686 sequences.
+
+It took 0 secs to cluster 1195 sequences.
+
+Processing group F3D141:
+F3D141	1115	486	629
+Total number of sequences before pre.cluster was 1115.
+pre.cluster removed 629 sequences.
+
+It took 0 secs to cluster 1115 sequences.
+
+Processing group F3D142:
+F3D142	723	368	355
+Total number of sequences before pre.cluster was 723.
+pre.cluster removed 355 sequences.
+
+It took 0 secs to cluster 723 sequences.
+
+Processing group F3D143:
+F3D143	734	382	352
+Total number of sequences before pre.cluster was 734.
+pre.cluster removed 352 sequences.
+
+It took 0 secs to cluster 734 sequences.
+F3D2	2747	911	1836
+Total number of sequences before pre.cluster was 2747.
+pre.cluster removed 1836 sequences.
+
+It took 0 secs to cluster 2747 sequences.
+
+Processing group F3D3:
+F3D3	1078	444	634
+Total number of sequences before pre.cluster was 1078.
+pre.cluster removed 634 sequences.
+
+It took 0 secs to cluster 1078 sequences.
+
+Processing group F3D5:
+F3D5	907	433	474
+Total number of sequences before pre.cluster was 907.
+pre.cluster removed 474 sequences.
+
+It took 0 secs to cluster 907 sequences.
+
+Processing group Mock:
+Mock	531	132	399
+Total number of sequences before pre.cluster was 531.
+pre.cluster removed 399 sequences.
+
+It took 0 secs to cluster 531 sequences.
+
+Deconvoluting count table results...
+It took 0 secs to merge 5301 sequences group data.
+/******************************************/
+Running get.seqs: 
+Selected 3282 sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.fasta.
+/******************************************/
+It took 1 secs to run pre.cluster.
+
+Using 2 processors.
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D0.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D1.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D141.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D142.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D143.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D144.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D145.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D2.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D3.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.F3D5.map
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.Mock.map
+
+
+mothur > chimera.vsearch(fasta=current,count=current,dereplicate=t)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+Unable to open vsearch. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/vsearch.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/vsearch. Trying mothur's executable directory vsearch.
+Unable to open vsearch.
+vsearch file does not exist. Checking path... 
+Found vsearch in your path, using /opt/conda/bin//vsearch
+Using vsearch version v2.32.0.
+Checking sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta ...
+
+/******************************************/
+Splitting by sample: 
+
+Using 2 processors.
+
+Selecting sequences for groups F3D0-F3D1-F3D141-F3D142-F3D143
+
+
+Selecting sequences for groups F3D144-F3D145-F3D2-F3D3-F3D5-Mock
+
+Selected 617 sequences from F3D0.
+Selected 509 sequences from F3D1.
+Selected 486 sequences from F3D141.
+Selected 368 sequences from F3D142.
+Selected 382 sequences from F3D143.
+Selected 452 sequences from F3D144.
+Selected 567 sequences from F3D145.
+Selected 911 sequences from F3D2.
+Selected 444 sequences from F3D3.
+Selected 433 sequences from F3D5.
+Selected 132 sequences from Mock.
+
+It took 0 seconds to split the dataset by sample.
+/******************************************/
+
+It took 0 secs to check 452 sequences from group F3D144.
+
+It took 1 secs to check 617 sequences from group F3D0.
+
+It took 1 secs to check 567 sequences from group F3D145.
+
+It took 0 secs to check 509 sequences from group F3D1.
+
+It took 1 secs to check 486 sequences from group F3D141.
+
+It took 1 secs to check 911 sequences from group F3D2.
+
+It took 0 secs to check 368 sequences from group F3D142.
+
+It took 1 secs to check 382 sequences from group F3D143.
+
+It took 1 secs to check 444 sequences from group F3D3.
+
+It took 0 secs to check 433 sequences from group F3D5.
+
+It took 0 secs to check 132 sequences from group Mock.
+It took 3 secs to check 5301 sequences.
+
+
+Removing chimeras from your input files:
+/******************************************/
+Running command: remove.seqs(fasta=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.accnos)
+Unable to open /workspaces/gut. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut. Trying mothur's executable directory gut.
+Unable to open gut.
+Unable to open gut, skipping.
+Unable to open microbiome. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome. Trying mothur's executable directory microbiome.
+Unable to open microbiome.
+Unable to open microbiome, skipping.
+Unable to open workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta.
+Removed 1864 sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta.
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta
+
+/******************************************/
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.count_table
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.chimeras
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.accnos
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta
+
+
+mothur > classify.seqs(fasta=current,count=current,reference=/workspaces/gut-microbiome-workflow/data/reference/trainset9_032012.pds.fasta,taxonomy=/workspaces/gut-microbiome-workflow/data/reference/trainset9_032012.pds.tax,cutoff=80)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta as input file for the fasta parameter.
+
+Using 2 processors.
+Reading template taxonomy...     DONE.
+Reading template probabilities...     DONE.
+It took 2 seconds get probabilities.
+Classifying sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta ...
+
+It took 11 secs to classify 1418 sequences.
+
+
+It took 0 secs to create the summary file for 1418 sequences.
+
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.taxonomy
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.tax.summary
+
+
+mothur > remove.lineage(fasta=current,count=current,taxonomy=current,taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta as input file for the fasta parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.taxonomy as input file for the taxonomy parameter.
+
+/******************************************/
+Running command: remove.seqs(accnos=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.accnos, count=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.count_table, fasta=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta)
+Unable to open /workspaces/gut. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut. Trying mothur's executable directory gut.
+Unable to open gut.
+Unable to open gut, skipping.
+Unable to open microbiome. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome. Trying mothur's executable directory microbiome.
+Unable to open microbiome.
+Unable to open microbiome, skipping.
+Unable to open workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta.
+Unable to open /workspaces/gut. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/gut. Trying mothur's executable directory gut.
+Unable to open gut.
+Unable to open gut, skipping.
+Unable to open microbiome. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome.
+Unable to open /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/microbiome. Trying mothur's executable directory microbiome.
+Unable to open microbiome.
+Unable to open microbiome, skipping.
+Unable to open workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.count_table. Trying input directory /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.count_table.
+Removed 9 sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.fasta.
+Removed 57 sequences from /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.count_table.
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table
+
+/******************************************/
+
+Output File Names:
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.pick.taxonomy
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.accnos
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta
+
+
+mothur > summary.tax(taxonomy=current,count=current)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.pick.taxonomy as input file for the taxonomy parameter.
+
+It took 1 secs to create the summary file for 57739 sequences.
+
+
+Output File Names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.pick.tax.summary
+
+
+mothur > remove.groups(fasta=current,count=current,taxonomy=current,groups=Mock)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta as input file for the fasta parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.pick.taxonomy as input file for the taxonomy parameter.
+Removed 4048 sequences from your count file.
+Removed 41 sequences from your fasta file.
+Removed 41 sequences from your taxonomy file.
+
+Output File names: 
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.fasta
+/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.pick.pick.taxonomy
+
+
+mothur > rename.file(fasta=current,count=current,taxonomy=current,prefix=final)
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table as input file for the count parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.fasta as input file for the fasta parameter.
+Using /workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.pick.pick.taxonomy as input file for the taxonomy parameter.
+
+Current files saved by mothur:
+accnos=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pds.wang.accnos
+fasta=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/final.fasta
+taxonomy=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/final.taxonomy
+contigsreport=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.contigs_report
+count=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/final.count_table
+processors=2
+summary=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.trim.contigs.good.unique.summary
+file=/workspaces/gut-microbiome-workflow/work/4d/9da8fcdbac459d64573c8987c32de1/reads/stability.files
+
+mothur > phylotype(taxonomy=final.taxonomy)
+1
+2
+3
+4
+5
+6
+
+Output File Names: 
+final.tx.sabund
+final.tx.rabund
+final.tx.list
+
+
+mothur > make.shared(list=current,count=final.count_table,label=1)
+Using final.tx.list as input file for the list parameter.
+1
+
+Output File Names:
+final.tx.shared
+
+
+mothur > classify.otu(list=current,count=final.count_table,taxonomy=final.taxonomy,label=1)
+Using final.tx.list as input file for the list parameter.
+1
+
+Output File Names: 
+final.tx.1.cons.taxonomy
+final.tx.1.cons.tax.summary
+final.tx.2.cons.taxonomy
+final.tx.2.cons.tax.summary
+final.tx.3.cons.taxonomy
+final.tx.3.cons.tax.summary
+final.tx.4.cons.taxonomy
+final.tx.4.cons.tax.summary
+final.tx.5.cons.taxonomy
+final.tx.5.cons.tax.summary
+final.tx.6.cons.taxonomy
+final.tx.6.cons.tax.summary
+
+
+mothur > quit()
+
+
+It took 82 seconds to run 21 commands from /workspaces/gut-microbiome-workflow/scripts/stability.batch batch file.
+
+Logfile : run.logfile
+

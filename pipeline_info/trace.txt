@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	3e/d005b2	25172	MOTHUR (16S read processing)	FAILED	1	2026-11-20 23:47:01.531	832ms	818ms	-	-	-	-	-

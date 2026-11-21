@@ -1,0 +1,41 @@
+# Paired-end processing and taxonomic classification
+
+set.logfile(name=run.logfile)
+
+make.file(inputdir=$DATA,type=fastq,prefix=stability)
+make.contigs(file=current,processors=$PROC)
+
+# Initial quality filtering
+screen.seqs(fasta=current,count=current,maxambig=0,maxlength=275,maxhomop=8)
+
+# Dereplicate sequences
+unique.seqs(fasta=current,count=current)
+summary.seqs(fasta=current,count=current)
+
+# Align to the SILVA reference
+align.seqs(fasta=current,reference=$REFERENCE_LOCATION/$ALIGNREF)
+
+# Screen and filter aligned sequences
+screen.seqs(fasta=current,count=current,start=1968,end=11550)
+filter.seqs(fasta=current,vertical=T,trump=.)
+
+# Further dereplication and error reduction
+unique.seqs(fasta=current,count=current)
+pre.cluster(fasta=current,count=current,diffs=2)
+
+# Identify and remove chimeras
+chimera.vsearch(fasta=current,count=current,dereplicate=t)
+
+# Assign taxonomy
+classify.seqs(fasta=current,count=current,reference=$REFERENCE_LOCATION/$TAXONREF_FASTA,taxonomy=$REFERENCE_LOCATION/$TAXONREF_TAX,cutoff=80)
+
+# Remove non-target lineages and the mock community
+remove.lineage(fasta=current,count=current,taxonomy=current,taxon=$CONTAMINANTS)
+summary.tax(taxonomy=current,count=current)
+remove.groups(fasta=current,count=current,taxonomy=current,groups=Mock)
+
+# Generate genus-level abundance tables
+rename.file(fasta=current,count=current,taxonomy=current,prefix=final)
+phylotype(taxonomy=final.taxonomy)
+make.shared(list=current,count=final.count_table,label=1)
+classify.otu(list=current,count=final.count_table,taxonomy=final.taxonomy,label=1)

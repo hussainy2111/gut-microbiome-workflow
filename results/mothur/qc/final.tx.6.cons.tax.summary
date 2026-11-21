@@ -1,0 +1,8 @@
+taxlevel	rankID	taxon	daughterlevels	total	F3D0	F3D1	F3D141	F3D142	F3D143	F3D144	F3D145	F3D2	F3D3	F3D5
+0	0	Root	1	1	1	1	1	1	1	1	1	1	1	1
+1	0.1	Bacteria	1	1	1	1	1	1	1	1	1	1	1	1
+2	0.1.1	"Bacteroidetes"	1	1	1	1	1	1	1	1	1	1	1	1
+3	0.1.1.1	"Bacteroidia"	1	1	1	1	1	1	1	1	1	1	1	1
+4	0.1.1.1.1	"Bacteroidales"	1	1	1	1	1	1	1	1	1	1	1	1
+5	0.1.1.1.1.1	"Porphyromonadaceae"	1	1	1	1	1	1	1	1	1	1	1	1
+6	0.1.1.1.1.1.1	"Porphyromonadaceae"_unclassified	0	1	1	1	1	1	1	1	1	1	1	1

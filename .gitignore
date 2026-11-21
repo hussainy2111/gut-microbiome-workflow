@@ -1,0 +1,11 @@
+data/raw/
+data/reference/
+work/
+.nextflow/
+.nextflow.log
+.venv/
+__pycache__/
+*.pyc
+*.tmp
+*.log
+.nextflow.log*
