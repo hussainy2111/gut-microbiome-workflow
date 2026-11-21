@@ -69,21 +69,11 @@ The main workflow is defined in `main.nf`. It contains two connected Nextflow pr
 
 **Process 1: Mothur sequence processing**
 
-The first process receives the raw reads, reference files and Mothur batch script. It copies the FASTQ files into its task working directory and executes the commands in `scripts/stability.batch`.
-
-Mothur assembles the paired reads, filters low-quality sequences, aligns sequences against the SILVA reference, removes likely chimeras and assigns taxonomy using the supplied training set.
-
-The process then excludes unwanted lineages and the mock community before generating the phylotype abundance table and taxonomy assignments. Mothur logs and quality-control summaries are retained as outputs.
+The first process receives the raw reads, reference files and Mothur batch script. It copies the FASTQ files into its task working directory and executes the commands in `scripts/stability.batch`. The process then excludes unwanted lineages and the mock community before generating the phylotype abundance table and taxonomy assignments. Mothur logs and quality-control summaries are retained as outputs.
 
 **Process 2: Diversity and composition analysis**
 
 The second process receives the Mothur abundance and taxonomy outputs, the sample metadata and `scripts/diversity.py`.
-
-The Python script generates genus-level abundance and relative abundance tables. It also calculates phylotype-level Shannon diversity after rarefying the samples to a common sequencing depth.
-
-The analysis produces tabular outputs and figures that can be used to inspect microbial composition and compare diversity between sampling periods.
-
-Nextflow manages the dependency between the two processes. The diversity analysis runs after the required Mothur outputs are available.
 
 ### Re-running analysis
 
